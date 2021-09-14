@@ -489,7 +489,7 @@ public class TickSeekBar extends View {
                 continue;
             }
             if (mShowTickMarksType == TickMarkType.OVAL) {
-                canvas.drawCircle(mTickMarksX[i], mProgressTrack.top, mTickRadius, mStockPaint);
+                canvas.drawCircle(mTickMarksX[i], mProgressTrack.top - 33, mTickRadius, mStockPaint);
             } else if (mShowTickMarksType == TickMarkType.DIVIDER) {
                 float dividerTickHeight;
                 int rectWidth = SizeUtils.dp2px(mContext, 1);
@@ -523,9 +523,9 @@ public class TickSeekBar extends View {
                 index = mTickTextsArr.length - 1 - i;
             }
             if (i == 0) {
-                canvas.drawText(mTickTextsArr[index], mTextCenterX[i] + mTickTextsWidth[index] / 2.0f, mTickTextY, mTextPaint);
+                canvas.drawText(mTickTextsArr[index], mTextCenterX[i] /*+ mTickTextsWidth[index] / 2.0f*/, mTickTextY, mTextPaint);
             } else if (i == mTickTextsArr.length - 1) {
-                canvas.drawText(mTickTextsArr[index], mTextCenterX[i] - mTickTextsWidth[index] / 2.0f, mTickTextY, mTextPaint);
+                canvas.drawText(mTickTextsArr[index], mTextCenterX[i] /*- mTickTextsWidth[index] / 2.0f*/, mTickTextY, mTextPaint);
             } else {
                 canvas.drawText(mTickTextsArr[index], mTextCenterX[i], mTickTextY, mTextPaint);
             }
